@@ -19,20 +19,20 @@ const Index = () => {
       <div className="container max-w-5xl mx-auto flex flex-col items-center justify-center z-10 py-12">
         {/* Logo */}
         <div className="mb-8 opacity-0 animate-slide-up">
-          <h1 className="text-4xl md:text-6xl font-bold text-arabfunded-purple tracking-tight">
-            Arab<span className="text-arabfunded-darkPurple">Funded</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+            Arab<span className="text-arabfunded-purple">Funded</span>
           </h1>
         </div>
         
         {/* Main heading */}
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 opacity-0 animate-slide-up">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-arabfunded-purple to-arabfunded-darkPurple">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-arabfunded-purple">
             حسابات التداول الممولة قادمة قريبًا
           </span>
         </h2>
         
         {/* Subheading */}
-        <p className="text-lg md:text-xl text-arabfunded-textGray text-center max-w-2xl mb-10 opacity-0 animate-slide-up-delay-300">
+        <p className="text-lg md:text-xl text-white text-center max-w-2xl mb-10 opacity-0 animate-slide-up-delay-300">
           نحن نعمل بجد لإطلاق منصتنا. كن أول من يعلم عند إطلاق ArabFunded - شركة PropFirm الرائدة للحسابات التداول الممولة.
         </p>
         

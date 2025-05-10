@@ -12,7 +12,7 @@ const NotificationForm = () => {
     e.preventDefault();
     
     if (!email || !email.includes('@')) {
-      toast.error("Please enter a valid email address");
+      toast.error("الرجاء إدخال بريد إلكتروني صحيح");
       return;
     }
     
@@ -20,32 +20,35 @@ const NotificationForm = () => {
     
     // Simulating API call
     setTimeout(() => {
-      toast.success("Thanks! We'll notify you when we launch.");
+      toast.success("شكراً! سنعلمك عند إطلاق المنصة.");
       setEmail('');
       setIsLoading(false);
     }, 1000);
   };
   
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md opacity-0 animate-slide-up-delay-600">
-      <div className="flex flex-col sm:flex-row gap-3">
+    <div className="w-full max-w-md opacity-0 animate-slide-up-delay-600">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-4">
         <Input
           type="email"
           placeholder="أدخل بريدك الإلكتروني"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="bg-white bg-opacity-80 border-arabfunded-purple placeholder:text-arabfunded-textGray"
+          className="bg-white/20 backdrop-blur-lg border-arabfunded-purple placeholder:text-white/70"
           dir="rtl"
         />
         <Button 
           type="submit" 
-          className="bg-arabfunded-darkPurple hover:bg-arabfunded-purple text-white transition-all duration-300 transform hover:scale-105"
+          className="bg-arabfunded-darkPurple hover:bg-arabfunded-purple text-white transition-all duration-300 transform hover:scale-105 hover:shadow-glow"
           disabled={isLoading}
         >
           {isLoading ? "جاري الإرسال..." : "أعلمني عند الإطلاق"}
         </Button>
-      </div>
-    </form>
+      </form>
+      <p className="text-center text-white/90 text-sm">
+        أو تواصل معنا مباشرة: <a href="mailto:contact@arabfunded.com" className="text-arabfunded-purple hover:underline">contact@arabfunded.com</a>
+      </p>
+    </div>
   );
 };
 
