@@ -1,13 +1,14 @@
 
 import React from 'react';
-import { Instagram, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { TikTok } from "./TikTok";
+import { XLogo } from "./XLogo";
 
 const SocialLinks = () => {
   return (
     <div className="flex space-x-4 opacity-0 animate-fade-in-delay-300">
       <SocialLink href="https://www.instagram.com/arab.funded/" icon={<Instagram size={20} />} />
-      <SocialLink href="https://x.com/ArabFunded" icon={<Twitter size={20} />} />
+      <SocialLink href="https://x.com/ArabFunded" icon={<XLogo size={20} />} />
       <SocialLink href="https://www.tiktok.com/@arabfunded" icon={<TikTok size={20} />} />
     </div>
   );

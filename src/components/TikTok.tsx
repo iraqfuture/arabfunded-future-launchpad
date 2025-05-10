@@ -8,28 +8,15 @@ export const TikTok = ({ size = 24, color = 'currentColor', ...props }) => {
       height={size}
       viewBox="0 0 24 24"
       fill="none"
-      stroke={color}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path
-        d="M9 12.5V17.5C9 18.6046 8.10457 19.5 7 19.5C5.89543 19.5 5 18.6046 5 17.5C5 16.3954 5.89543 15.5 7 15.5"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M9 8.5V4.5H11C11 7 13.5 8.5 16 8.5V10.5"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M16 10.5V15C16 17.2091 14.2091 19 12 19C9.79086 19 8 17.2091 8 15V10.5H9"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
+      <g>
+        <path
+          d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.166v13.453c0 2.088-1.784 3.151-3.279 3.151-1.451 0-3.279-1.063-3.279-3.151 0-2.109 1.785-3.151 3.279-3.151.287 0 .574.043.86.129v-3.477c-.333-.057-.637-.086-.86-.086C4.693 8.867 2 11.517 2 15.453c0 3.936 2.693 6.587 7.374 6.587 4.682 0 7.374-2.651 7.374-6.587V9.577a8.553 8.553 0 0 0 5.027 1.63V7.766a4.79 4.79 0 0 1-2.186-.495v-.585Z"
+          fill={color}
+        />
+      </g>
     </svg>
   );
 };
