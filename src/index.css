@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -124,119 +123,341 @@
     background-size: 30px 30px;
   }
 
-  /* Space background elements */
-  .stars-small {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#ffffff 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.5;
-    animation: twinkling 10s linear infinite;
+  /* New background elements */
+  
+  /* Grid background */
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(143, 92, 255, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143, 92, 255, 0.2) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    animation: grid-move 20s linear infinite;
   }
   
-  .stars-medium {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px);
-    background-size: 50px 50px;
-    background-position: 10px 10px;
-    opacity: 0.7;
-    animation: twinkling 15s linear infinite;
+  @keyframes grid-move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 40px 40px;
+    }
   }
   
-  .stars-large {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#ffffff 2px, transparent 2px);
-    background-size: 80px 80px;
-    background-position: 20px 20px;
-    opacity: 0.9;
-    animation: twinkling 20s linear infinite;
-  }
-  
-  /* Nebula animations */
-  .nebula {
+  /* Floating orbs */
+  .orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.15;
-    animation: nebula-float 25s ease-in-out infinite;
+    filter: blur(10px);
+    opacity: 0.6;
+    animation: orb-float 20s ease-in-out infinite;
   }
   
-  .nebula-1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(224,183,255,0.7) 0%, rgba(143,92,255,0.3) 70%, transparent 100%);
-    top: 10%;
-    left: 15%;
+  .orb-1 {
+    background: radial-gradient(circle, rgba(224,183,255,0.6) 0%, rgba(143,92,255,0.3) 60%, transparent 100%);
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    left: 10%;
+    animation-delay: -5s;
   }
   
-  .nebula-2 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(143,92,255,0.6) 0%, rgba(109,61,254,0.3) 60%, transparent 100%);
-    bottom: 15%;
-    right: 10%;
-    animation-delay: -7s;
-  }
-  
-  .nebula-3 {
+  .orb-2 {
+    background: radial-gradient(circle, rgba(109,61,254,0.5) 0%, rgba(143,92,255,0.2) 70%, transparent 100%);
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(215,177,255,0.5) 0%, rgba(224,183,255,0.2) 60%, transparent 100%);
+    bottom: 10%;
+    right: 15%;
+    animation-delay: -10s;
+  }
+  
+  .orb-3 {
+    background: radial-gradient(circle, rgba(224,183,255,0.4) 0%, rgba(215,177,255,0.2) 60%, transparent 100%);
+    width: 150px;
+    height: 150px;
     top: 60%;
-    left: 70%;
+    left: 30%;
     animation-delay: -15s;
   }
   
-  @keyframes nebula-float {
-    0%, 100% { transform: translateY(0) translateX(0) scale(1); }
-    25% { transform: translateY(-20px) translateX(10px) scale(1.05); }
-    50% { transform: translateY(0) translateX(20px) scale(1); }
-    75% { transform: translateY(20px) translateX(10px) scale(0.95); }
+  @keyframes orb-float {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    25% { transform: translateY(-30px) scale(1.1); opacity: 0.7; }
+    50% { transform: translateY(0) scale(1); opacity: 0.6; }
+    75% { transform: translateY(30px) scale(0.9); opacity: 0.5; }
   }
   
-  @keyframes twinkling {
-    0% { opacity: 0.4; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.4; }
-  }
-  
-  .shooting-star {
+  /* Galaxy effect */
+  .galaxy {
     position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px white;
-    animation: shoot 12s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 40rem;
+    opacity: 0.15;
   }
   
-  @keyframes shoot {
-    0% {
-      transform: translate(0, 0) rotate(-45deg) scale(0);
-      opacity: 0;
-    }
-    2% {
-      opacity: 1;
-    }
-    8% {
-      transform: translate(150px, 150px) rotate(-45deg) scale(1);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(150px, 150px) rotate(-45deg) scale(1);
-      opacity: 0;
-    }
+  .galaxy-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid;
+    animation: galaxy-rotate 30s linear infinite;
+  }
+  
+  .galaxy-ring-1 {
+    inset: 0;
+    border-color: rgba(143, 92, 255, 0.8);
+    animation-duration: 60s;
+  }
+  
+  .galaxy-ring-2 {
+    inset: 20%;
+    border-color: rgba(224, 183, 255, 0.8);
+    animation-duration: 45s;
+    animation-direction: reverse;
+  }
+  
+  .galaxy-ring-3 {
+    inset: 40%;
+    border-color: rgba(109, 61, 254, 0.8);
+    animation-duration: 30s;
+  }
+  
+  @keyframes galaxy-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Moving particles */
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+  }
+  
+  .particles-1 {
+    background-image: radial-gradient(rgba(224, 183, 255, 0.8) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: particles-move-1 100s linear infinite;
+  }
+  
+  .particles-2 {
+    background-image: radial-gradient(rgba(143, 92, 255, 0.6) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: particles-move-2 120s linear infinite;
+  }
+  
+  .particles-3 {
+    background-image: radial-gradient(rgba(109, 61, 254, 0.4) 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+    animation: particles-move-3 80s linear infinite;
+  }
+  
+  @keyframes particles-move-1 {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+  }
+  
+  @keyframes particles-move-2 {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 500px; }
+  }
+  
+  @keyframes particles-move-3 {
+    0% { background-position: 0 0; }
+    100% { background-position: 500px -1000px; }
+  }
+  
+  /* Light rays */
+  .light-ray {
+    position: absolute;
+    background: linear-gradient(to bottom right, rgba(224, 183, 255, 0.2), rgba(143, 92, 255, 0.05));
+    transform-origin: top left;
+    animation: light-ray-move 10s ease-in-out infinite alternate;
+  }
+  
+  .light-ray-1 {
+    top: -10%;
+    left: 20%;
+    width: 200px;
+    height: 1000px;
+    transform: rotate(45deg);
+    opacity: 0.4;
+  }
+  
+  .light-ray-2 {
+    top: 40%;
+    left: -10%;
+    width: 150px;
+    height: 800px;
+    transform: rotate(30deg);
+    opacity: 0.3;
+    animation-delay: -5s;
+  }
+  
+  .light-ray-3 {
+    top: -20%;
+    right: 10%;
+    width: 180px;
+    height: 1200px;
+    transform: rotate(-30deg);
+    opacity: 0.2;
+    animation-delay: -8s;
+  }
+  
+  @keyframes light-ray-move {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.1; }
+  }
+  
+  /* Holographic elements */
+  .holographic-element {
+    position: absolute;
+    border: 1px solid rgba(143, 92, 255, 0.3);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(143, 92, 255, 0.2);
+    animation: holographic-float 15s ease-in-out infinite;
+    opacity: 0.3;
+  }
+  
+  .h-element-1 {
+    width: 100px;
+    height: 100px;
+    top: 15%;
+    right: 20%;
+    animation-delay: -3s;
+  }
+  
+  .h-element-2 {
+    width: 60px;
+    height: 160px;
+    bottom: 20%;
+    left: 15%;
+    animation-delay: -7s;
+  }
+  
+  .h-element-3 {
+    width: 120px;
+    height: 80px;
+    top: 60%;
+    right: 35%;
+    animation-delay: -12s;
+  }
+  
+  @keyframes holographic-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(20px) rotate(-5deg); }
+  }
+  
+  /* Digital rain */
+  .digital-rain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, 
+      rgba(143, 92, 255, 0) 0%,
+      rgba(143, 92, 255, 0.05) 50%,
+      rgba(143, 92, 255, 0) 100%
+    );
+    background-size: 100% 20px;
+    animation: digital-rain 20s linear infinite;
+    opacity: 0.3;
+  }
+  
+  @keyframes digital-rain {
+    0% { background-position: 0 -1000px; }
+    100% { background-position: 0 1000px; }
+  }
+  
+  /* Wave animation */
+  .wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+  }
+  
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: rgba(143, 92, 255, 0.05);
+    border-radius: 50% 50% 0 0;
+    animation: wave 15s linear infinite;
+  }
+  
+  .wave1 {
+    animation-delay: 0s;
+    bottom: -80%;
+  }
+  
+  .wave2 {
+    animation-delay: -5s;
+    bottom: -70%;
+    opacity: 0.3;
+  }
+  
+  .wave3 {
+    animation-delay: -10s;
+    bottom: -60%;
+    opacity: 0.2;
+  }
+  
+  @keyframes wave {
+    0% { transform: translateX(0) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2); }
+    100% { transform: translateX(-100%) scale(1); }
+  }
+  
+  /* Glowing panels */
+  .panel {
+    position: absolute;
+    background: rgba(143, 92, 255, 0.05);
+    border: 1px solid rgba(143, 92, 255, 0.2);
+    box-shadow: 0 0 20px rgba(143, 92, 255, 0.1);
+    animation: panel-glow 8s ease-in-out infinite;
+  }
+  
+  .panel-1 {
+    width: 140px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+    border-radius: 10px;
+  }
+  
+  .panel-2 {
+    width: 180px;
+    height: 120px;
+    bottom: 15%;
+    right: 8%;
+    border-radius: 10px;
+    animation-delay: -4s;
+  }
+  
+  .panel-3 {
+    width: 100px;
+    height: 160px;
+    top: 40%;
+    right: 12%;
+    border-radius: 10px;
+    animation-delay: -7s;
+  }
+  
+  @keyframes panel-glow {
+    0%, 100% { opacity: 0.3; box-shadow: 0 0 20px rgba(143, 92, 255, 0.1); }
+    50% { opacity: 0.6; box-shadow: 0 0 30px rgba(143, 92, 255, 0.3); }
   }
   
   .animate-float-slow {
@@ -249,6 +470,10 @@
   
   .animate-pulse-slow {
     animation: pulse-slow 8s ease-in-out infinite;
+  }
+  
+  .animate-pulse-medium {
+    animation: pulse-slow 5s ease-in-out infinite;
   }
   
   .animate-rotate-slow {
