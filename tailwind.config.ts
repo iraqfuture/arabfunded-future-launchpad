@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,8 +26,18 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#8F5CFF',
+					foreground: '#FFFFFF',
+					dark: '#6D3DFE',
+				},
+				arabfunded: {
+					purple: '#8F5CFF',
+					darkPurple: '#6D3DFE',
+					lightBg: '#F6F2FE',
+					textBlack: '#1E1E1E',
+					textGray: '#4F4F4F',
+					lightPink: '#E0B7FF',
+					glowPurple: '#D7B1FF',
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -84,11 +95,51 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						opacity: '0.7',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '1',
+						transform: 'scale(1.05)'
+					}
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'slide-up': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'slide-up': 'slide-up 0.8s ease-out forwards',
+				'slide-up-delay-300': 'slide-up 0.8s ease-out 0.3s forwards',
+				'slide-up-delay-600': 'slide-up 0.8s ease-out 0.6s forwards',
+				'fade-in': 'fade-in 1s ease-out forwards',
+				'fade-in-delay-300': 'fade-in 1s ease-out 0.3s forwards',
 			}
 		}
 	},

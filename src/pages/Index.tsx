@@ -1,11 +1,55 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import { Toaster } from "sonner";
+import AnimatedBackground from '@/components/AnimatedBackground';
+import CountdownTimer from '@/components/CountdownTimer';
+import NotificationForm from '@/components/NotificationForm';
+import SocialLinks from '@/components/SocialLinks';
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "ArabFunded - Coming Soon";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center p-6">
+      <Toaster position="top-center" />
+      <AnimatedBackground />
+      
+      <div className="container max-w-5xl mx-auto flex flex-col items-center justify-center z-10 py-12">
+        {/* Logo */}
+        <div className="mb-8 opacity-0 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl font-bold text-arabfunded-purple tracking-tight">
+            Arab<span className="text-arabfunded-darkPurple">Funded</span>
+          </h1>
+        </div>
+        
+        {/* Main heading */}
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6 opacity-0 animate-slide-up">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-arabfunded-purple to-arabfunded-darkPurple">
+            حسابات التداول الممولة قادمة قريبًا
+          </span>
+        </h2>
+        
+        {/* Subheading */}
+        <p className="text-lg md:text-xl text-arabfunded-textGray text-center max-w-2xl mb-10 opacity-0 animate-slide-up-delay-300">
+          نحن نعمل بجد لإطلاق منصتنا. كن أول من يعلم عند إطلاق ArabFunded - شركة PropFirm الرائدة للحسابات التداول الممولة.
+        </p>
+        
+        {/* Countdown timer */}
+        <div className="w-full max-w-2xl mb-10">
+          <CountdownTimer />
+        </div>
+        
+        {/* Notification form */}
+        <div className="w-full flex justify-center mb-12">
+          <NotificationForm />
+        </div>
+        
+        {/* Social links */}
+        <div className="mt-6">
+          <SocialLinks />
+        </div>
       </div>
     </div>
   );
