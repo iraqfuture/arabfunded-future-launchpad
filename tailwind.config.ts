@@ -143,6 +143,7 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
 				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'rotate-very-slow': 'rotate-slow 40s linear infinite reverse',
 				'slide-up': 'slide-up 0.8s ease-out forwards',
 				'slide-up-delay-300': 'slide-up 0.8s ease-out 0.3s forwards',
 				'slide-up-delay-600': 'slide-up 0.8s ease-out 0.6s forwards',
