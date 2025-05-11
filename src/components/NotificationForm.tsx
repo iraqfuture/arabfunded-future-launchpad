@@ -8,7 +8,7 @@ const NotificationForm = () => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!email || !email.includes('@')) {
@@ -18,12 +18,37 @@ const NotificationForm = () => {
     
     setIsLoading(true);
     
-    // Simulating API call
-    setTimeout(() => {
+    try {
+      // Store email in localStorage to persist it
+      const existingEmails = JSON.parse(localStorage.getItem('subscribedEmails') || '[]');
+      
+      // Check if email already exists
+      if (existingEmails.includes(email)) {
+        toast.info("هذا البريد الإلكتروني مسجل بالفعل");
+        setIsLoading(false);
+        return;
+      }
+      
+      // Add new email to the list
+      existingEmails.push(email);
+      localStorage.setItem('subscribedEmails', JSON.stringify(existingEmails));
+      
+      // You could add an API call here to send the email to your backend
+      // For example:
+      // await fetch('https://your-api.com/subscribe', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email })
+      // });
+      
       toast.success("شكراً! سنعلمك عند إطلاق المنصة.");
       setEmail('');
+    } catch (error) {
+      console.error("Error saving email:", error);
+      toast.error("حدث خطأ أثناء حفظ بريدك الإلكتروني، يرجى المحاولة مرة أخرى");
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
   
   return (
